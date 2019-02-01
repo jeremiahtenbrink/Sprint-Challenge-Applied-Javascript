@@ -32,10 +32,23 @@
   .right-button {
     top: 50%; 
     right: 25px;
-    transform: translate(0, -50%);
+    transform: translateX(-100%) ;
   }
   img {
     .width-100();
-    display: none;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 1s ease-in-out;
+
+    &.active {
+      opacity: 1;
+      display: block;
+      transform: translateX(0);
+      transition: all 1s ease-in-out;
+    }
+
+    &.notActive {
+      display: none;
+    }
   }
 }
